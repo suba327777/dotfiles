@@ -12,7 +12,7 @@ eval "$(anyenv init -)"
 #export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 #export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 
-# Java Versionの切替アリスを設定
+# Java Versionの切替aliasを設定
 #alias java17="export JAVA_HOME=$JAVA_17_HOME"
 #alias java11="export JAVA_HOME=$JAVA_11_HOME"
 #alias java8="export JAVA_HOME=$JAVA_8_HOME"
