@@ -1,5 +1,9 @@
 SHELL=/bin/zsh
 
+.PHONY:all
+all: 
+	brew iterm2 karabiner nvim tmux zsh
+
 .PHONY:clean
 clean:
 	cd brew && make clean && \
