@@ -3,7 +3,7 @@ name: Make dotfiles
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   make:
