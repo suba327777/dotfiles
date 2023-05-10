@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - main
-job:
+jobs:
   make:
     runs-on: macos-latest
     steps:
       - name
       - uses: actions/checkout@v3
-        run: make
+        run: mak
