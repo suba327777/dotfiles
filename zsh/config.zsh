@@ -7,6 +7,10 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(anyenv init -)"
 
+#rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # JAVA VERSION
 #export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
 #export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
