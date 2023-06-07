@@ -13,18 +13,18 @@ packer.startup(function(use)
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
 
-  use 'kyazdani42/nvim-web-devicons' -- File icons
-  use 'lambdalisue/fern.vim' -- filer
-  use 'voldikss/vim-floaterm' --term
+  use 'kyazdani42/nvim-web-devicons'        -- File icons
+  use 'lambdalisue/fern.vim'                -- filer
+  use 'voldikss/vim-floaterm'               --term
   use 'lukas-reineke/indent-blankline.nvim' -- indent-line
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
-  use 'L3MON4D3/LuaSnip' -- Snippet
-  use 'hoob3rt/lualine.nvim' -- statusline
+  use 'glepnir/lspsaga.nvim'                -- LSP UIs
+  use 'L3MON4D3/LuaSnip'                    -- Snippet
+  use 'hoob3rt/lualine.nvim'                -- statusline
 
   -- hrsh7th
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-buffer'   -- nvim-cmp source for buffer words
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' --Completion
+  use 'hrsh7th/nvim-cmp'     --Completion
   use 'onsails/lspkind-nvim'
 
   -- github copilot
@@ -36,7 +36,7 @@ packer.startup(function(use)
     run = ':TSUpdate'
   }
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for NeoVim's built-in LSP client
+  use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for NeoVim's built-in LSP client
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'puremourning/vimspector' -- debug plugin
@@ -63,7 +63,7 @@ packer.startup(function(use)
   use 'dinhhuy258/git.nvim' --For git blame & browser
 
   -- control system
-  use 'ur4ltz/surround.nvim' -- word sandwich
-  use 'tpope/vim-commentary' -- gcc comment
+  use 'ur4ltz/surround.nvim'    -- word sandwich
+  use 'tpope/vim-commentary'    -- gcc comment
   use 'ggandor/lightspeed.nvim' --move f
 end)
