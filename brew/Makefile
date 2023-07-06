@@ -12,3 +12,7 @@ init:
 .PHONY: clean
 clean:
 	unlink ${HOME}/Brewfile || true
+
+.PHONY: bundle
+bundle:
+	brew bundle dump --force --describe --file=${HOME}/Brewfile
