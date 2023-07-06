@@ -6,30 +6,130 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
+# All in one for **env
 brew "anyenv"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
 brew "gcc"
+# Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Configurable static site generator
 brew "hugo"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Language Server for the Lua language
 brew "lua-language-server"
+# Parser generator tool and incremental parsing library
 brew "tree-sitter"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Node.js version manager
 brew "nodebrew"
+# Development kit for the Java programming language
 brew "openjdk@11"
+# Object-relational database system
 brew "postgresql@14"
+# Python version management
 brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# Ruby version manager
 brew "rbenv"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
+# User interface to the TELNET protocol
 brew "telnet"
+# Terminal multiplexer
 brew "tmux"
+# JavaScript package manager
 brew "yarn"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Open-source keystroke visualizer
 cask "keycastr"
+# JDK from the Eclipse Foundation (Adoptium)
 cask "temurin11"
+# JDK from the Eclipse Foundation (Adoptium)
 cask "temurin8"
+# Porting tool, to make Windows programs/games into native apps
 cask "unofficial-wineskin"
+vscode "abusaidm.html-snippets"
+vscode "adamsome.vscode-theme-gruvbox-minor"
+vscode "adpyke.codesnap"
+vscode "adpyke.vscode-sql-formatter"
+vscode "akamud.vscode-theme-onedark"
+vscode "asvetliakov.vscode-neovim"
+vscode "bradgashler.htmltagwrap"
+vscode "bungcip.better-toml"
+vscode "christian-kohler.path-intellisense"
+vscode "cschlosser.doxdocgen"
+vscode "csstools.postcss"
+vscode "dsznajder.es7-react-js-snippets"
+vscode "dzannotti.vscode-babel-coloring"
+vscode "ecmel.vscode-html-css"
+vscode "esbenp.prettier-vscode"
+vscode "formulahendry.auto-rename-tag"
+vscode "formulahendry.code-runner"
+vscode "GitHub.vscode-pull-request-github"
+vscode "gitpod.gitpod-desktop"
+vscode "hediet.vscode-drawio"
+vscode "kisstkondoros.vscode-gutter-preview"
+vscode "mattpocock.ts-error-translator"
+vscode "mhutchie.git-graph"
+vscode "mitaki28.vscode-clang"
+vscode "mkaufman.HTMLHint"
+vscode "mosapride.zenkaku"
+vscode "ms-azuretools.vscode-docker"
+vscode "MS-CEINTL.vscode-language-pack-ja"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode.cmake-tools"
+vscode "ms-vscode.cpptools"
+vscode "ms-vscode.cpptools-extension-pack"
+vscode "ms-vscode.cpptools-themes"
+vscode "ms-vscode.vscode-typescript-next"
+vscode "oderwat.indent-rainbow"
+vscode "Orta.vscode-jest"
+vscode "PKief.material-icon-theme"
+vscode "pranaygp.vscode-css-peek"
+vscode "Ransh.ransh"
+vscode "redhat.java"
+vscode "redhat.vscode-commons"
+vscode "ritwickdey.LiveServer"
+vscode "rust-lang.rust-analyzer"
+vscode "ryanolsonx.solarized"
+vscode "saikou9901.evilinspector"
+vscode "sainnhe.gruvbox-material"
+vscode "serayuzgur.crates"
+vscode "smelukov.vscode-csstree"
+vscode "softwaredotcom.swdc-vscode"
+vscode "styled-components.vscode-styled-components"
+vscode "Swellaby.rust-pack"
+vscode "twxs.cmake"
+vscode "vincaslt.highlight-matching-tag"
+vscode "VisualStudioExptTeam.intellicode-api-usage-examples"
+vscode "VisualStudioExptTeam.vscodeintellicode"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-maven"
+vscode "withfig.fig"
+vscode "wix.vscode-import-cost"
+vscode "xabikos.JavaScriptSnippets"
+vscode "yzhang.markdown-all-in-one"
