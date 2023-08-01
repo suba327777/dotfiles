@@ -66,4 +66,5 @@ packer.startup(function(use)
   use 'ur4ltz/surround.nvim'    -- word sandwich
   use 'tpope/vim-commentary'    -- gcc comment
   use 'ggandor/lightspeed.nvim' --move f
+  use 'uga-rosa/translate.nvim'
 end)
