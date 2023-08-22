@@ -1,6 +1,6 @@
 local metals_config = require("metals").bare_config()
 
--- lsp settings
+-- lsp settings(Scala)
 metals_config.settings = {
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
