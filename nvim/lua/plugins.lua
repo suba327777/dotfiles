@@ -39,6 +39,7 @@ packer.startup(function(use)
   use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for NeoVim's built-in LSP client
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+  use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
   use 'puremourning/vimspector' -- debug plugin
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
