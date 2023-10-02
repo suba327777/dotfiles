@@ -49,3 +49,5 @@ nvim_lsp.gopls.setup {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "go.mod" }
 }
+
+nvim_lsp.pyright.setup {}
