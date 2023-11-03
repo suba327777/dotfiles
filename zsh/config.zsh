@@ -33,6 +33,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # vim en_US
 export LANG=en_US.UTF-8
 
+# Lua
+export PATH=$PATH:$HOME/.config/lsp/lua-language-server/bin
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/suba/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
