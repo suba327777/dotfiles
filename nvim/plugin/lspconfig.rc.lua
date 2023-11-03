@@ -19,6 +19,10 @@ nvim_lsp.tsserver.setup {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
 }
+-- vim fn , NeoVim API etc..
+require("neodev").setup({
+
+})
 
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
