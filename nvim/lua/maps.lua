@@ -38,3 +38,6 @@ keymap.set('n', "Db", "<cmd>:vimspector#ToggleBreakpoint()<CR>")
 
 -- lightspeed
 keymap.set('n', "f", "<Plug>Lightspeed_f")
+
+-- yank diag
+vim.keymap.set('n', 'yd', '<cmd>YankDiag<CR>')

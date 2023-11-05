@@ -69,4 +69,5 @@ packer.startup(function(use)
   use 'tpope/vim-commentary'    -- gcc comment
   use 'ggandor/lightspeed.nvim' --move f
   use 'uga-rosa/translate.nvim'
+  use 'suba327777/yank-diag.nvim'
 end)
