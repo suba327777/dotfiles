@@ -27,7 +27,10 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 keymap.set('i', '<C-F>', '<Right>', { noremap = true })
 keymap.set('i', '<C-B>', '<Left>', { noremap = true })
 
+-- path
+keymap.set('n', 'fnc', [[:let @* = expand('%:t')<CR>]], { noremap = true, silent = true })
 
+-- plugin mapping
 -- lazy git
 keymap.set('n', 'lg', '<cmd>:FloatermNew lazygit<CR>')
 --Fern
