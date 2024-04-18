@@ -56,3 +56,7 @@ nvim_lsp.gopls.setup {
 
 -- Python
 nvim_lsp.pyright.setup {}
+
+-- vue
+nvim_lsp.volar.setup({
+})
