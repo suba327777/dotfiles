@@ -69,6 +69,14 @@ packer.startup(function(use)
   use 'ur4ltz/surround.nvim'    -- word sandwich
   use 'tpope/vim-commentary'    -- gcc comment
   use 'ggandor/lightspeed.nvim' --move f
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
   use 'uga-rosa/translate.nvim'
   use 'suba327777/yank-diag.nvim'
 end)
