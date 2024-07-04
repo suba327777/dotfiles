@@ -16,6 +16,7 @@ packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'        -- File icons
   use 'lambdalisue/fern.vim'                -- filer
   use 'voldikss/vim-floaterm'               --term
+  use 'simeji/winresizer'                   -- window resize
   use 'lukas-reineke/indent-blankline.nvim' -- indent-line
   use 'glepnir/lspsaga.nvim'                -- LSP UIs
   use 'L3MON4D3/LuaSnip'                    -- Snippet
