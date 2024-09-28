@@ -9,10 +9,6 @@ config.macos_forward_to_ime_modifier_mask = 'SHIFT|CTRL'
 
 -- tab
 config.hide_tab_bar_if_only_one_tab = true
-config.window_frame = {
-  inactive_titlebar_bg = "none",
-  active_titlebar_bg = "none",
-}
 config.colors = {
   tab_bar = {
     inactive_tab_edge = "none",
