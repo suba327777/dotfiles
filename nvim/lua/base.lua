@@ -27,6 +27,9 @@ vim.opt.wrap = false         --No wrap lines
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.mouse = 'a'
 vim.opt.clipboard:append { 'unnamedplus' }
 vim.opt.backspace = 'start,eol,indent'
