@@ -13,6 +13,7 @@ clean:
 	cd ../karabiner && make clean && \
 	cd ../nvim && make clean && \
 	cd ../tmux && make clean && \
+	cd ../wezterm && make clean && \
 	cd ../zsh && make clean && 
 
 .PHONY: brew
@@ -34,6 +35,10 @@ nvim:
 .PHONY:tmux
 tmux:
 	cd tmux && make
+
+.PHONY: wezterm
+wezterm:
+	cd wezterm && make
 
 .PHONY: zsh
 zsh:
