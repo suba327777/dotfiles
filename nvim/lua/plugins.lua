@@ -79,4 +79,6 @@ packer.startup(function(use)
   }
   use 'uga-rosa/translate.nvim'
   use 'suba327777/yank-diag.nvim'
+  -- Lua
+  use '0x00-ketsu/maximizer.nvim'
 end)
