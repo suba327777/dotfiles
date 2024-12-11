@@ -19,6 +19,8 @@ nvim_lsp.tsserver.setup {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
 }
+
+
 -- vim fn , NeoVim API etc..
 require("neodev").setup({
 
@@ -60,3 +62,10 @@ nvim_lsp.pyright.setup {}
 -- vue
 nvim_lsp.volar.setup({
 })
+
+-- Zig
+nvim_lsp.zls.setup {
+  on_attach = on_attach,
+  cmd = { "zls" },
+  filetypes = { "zig" },
+}
