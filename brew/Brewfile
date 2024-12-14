@@ -1,19 +1,31 @@
 tap "adoptopenjdk/openjdk"
+tap "coursier/formulas"
 tap "gcenx/wine"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
+tap "kyu08/tap"
+# Run your GitHub Actions locally
+brew "act"
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
 # All in one for **env
 brew "anyenv"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Cross-platform make
+brew "cmake"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Fuzzy finder with preview window for make, pnpm, & yarn
+brew "fzf-make"
 # GNU compiler collection
 brew "gcc"
+# Remote repository management made easy
+brew "ghq"
 # Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
 # Open source programming language to build simple/reliable/efficient software
@@ -22,12 +34,24 @@ brew "go"
 brew "hugo"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Color management engine supporting ICC profiles
+brew "little-cms2"
 # Language Server for the Lua language
 brew "lua-language-server"
+# Package manager for the Lua programming language
+brew "luarocks"
+# Cross platform, open source .NET development framework
+brew "mono"
+# Open source relational database management system
+brew "mysql"
+# Open source relational database management system
+brew "mysql-client"
 # Parser generator tool and incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx", restart_service: true
 # Node.js version manager
 brew "nodebrew"
 # Development kit for the Java programming language
@@ -44,52 +68,77 @@ brew "rbenv"
 brew "ripgrep"
 # Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
+# Generate clients, server stubs, and docs from an OpenAPI spec
+brew "swagger-codegen"
 # User interface to the TELNET protocol
 brew "telnet"
 # Terminal multiplexer
 brew "tmux"
 # JavaScript package manager
 brew "yarn"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
+# Launcher for Coursier
+brew "coursier/formulas/coursier"
+# Virtual Audio Driver
+cask "blackhole-16ch"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "google-cloud-sdk"
+# Vector graphics editor
+cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Open-source keystroke visualizer
-cask "keycastr"
-# JDK from the Eclipse Foundation (Adoptium)
-cask "temurin11"
-# JDK from the Eclipse Foundation (Adoptium)
-cask "temurin8"
 # Porting tool, to make Windows programs/games into native apps
-cask "unofficial-wineskin"
+cask "kegworks"
+# Open-source keystroke visualiser
+cask "keycastr"
+# Administration and development platform for PostgreSQL
+cask "pgadmin4"
+# Create experiments in behavioral science
+cask "psychopy"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@11"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@21"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@8"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
 vscode "abusaidm.html-snippets"
 vscode "adamsome.vscode-theme-gruvbox-minor"
 vscode "adpyke.codesnap"
 vscode "adpyke.vscode-sql-formatter"
 vscode "akamud.vscode-theme-onedark"
+vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "asvetliakov.vscode-neovim"
 vscode "bradgashler.htmltagwrap"
-vscode "bungcip.better-toml"
 vscode "christian-kohler.path-intellisense"
 vscode "cschlosser.doxdocgen"
 vscode "csstools.postcss"
+vscode "dbaeumer.vscode-eslint"
 vscode "dsznajder.es7-react-js-snippets"
 vscode "dzannotti.vscode-babel-coloring"
 vscode "ecmel.vscode-html-css"
 vscode "esbenp.prettier-vscode"
 vscode "formulahendry.auto-rename-tag"
 vscode "formulahendry.code-runner"
-vscode "GitHub.vscode-pull-request-github"
+vscode "github.vscode-pull-request-github"
 vscode "gitpod.gitpod-desktop"
+vscode "golang.go"
 vscode "hediet.vscode-drawio"
+vscode "htmlhint.vscode-htmlhint"
 vscode "kisstkondoros.vscode-gutter-preview"
 vscode "mattpocock.ts-error-translator"
 vscode "mhutchie.git-graph"
 vscode "mitaki28.vscode-clang"
-vscode "mkaufman.HTMLHint"
 vscode "mosapride.zenkaku"
 vscode "ms-azuretools.vscode-docker"
-vscode "MS-CEINTL.vscode-language-pack-ja"
+vscode "ms-ceintl.vscode-language-pack-ja"
+vscode "ms-dotnettools.csdevkit"
 vscode "ms-dotnettools.csharp"
 vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-dotnettools.vscodeintellicode-csharp"
+vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "ms-toolsai.jupyter"
@@ -102,34 +151,32 @@ vscode "ms-vscode.cmake-tools"
 vscode "ms-vscode.cpptools"
 vscode "ms-vscode.cpptools-extension-pack"
 vscode "ms-vscode.cpptools-themes"
-vscode "ms-vscode.vscode-typescript-next"
 vscode "oderwat.indent-rainbow"
-vscode "Orta.vscode-jest"
-vscode "PKief.material-icon-theme"
+vscode "orta.vscode-jest"
+vscode "pkief.material-icon-theme"
 vscode "pranaygp.vscode-css-peek"
-vscode "Ransh.ransh"
+vscode "ransh.ransh"
 vscode "redhat.java"
 vscode "redhat.vscode-commons"
-vscode "ritwickdey.LiveServer"
+vscode "ritwickdey.liveserver"
 vscode "rust-lang.rust-analyzer"
 vscode "ryanolsonx.solarized"
 vscode "saikou9901.evilinspector"
 vscode "sainnhe.gruvbox-material"
 vscode "serayuzgur.crates"
+vscode "simonsiefke.svg-preview"
 vscode "smelukov.vscode-csstree"
-vscode "softwaredotcom.swdc-vscode"
 vscode "styled-components.vscode-styled-components"
-vscode "Swellaby.rust-pack"
+vscode "swellaby.rust-pack"
+vscode "tamasfe.even-better-toml"
 vscode "twxs.cmake"
+vscode "vadimcn.vscode-lldb"
 vscode "vincaslt.highlight-matching-tag"
-vscode "VisualStudioExptTeam.intellicode-api-usage-examples"
-vscode "VisualStudioExptTeam.vscodeintellicode"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
 vscode "vscjava.vscode-java-debug"
 vscode "vscjava.vscode-java-dependency"
-vscode "vscjava.vscode-java-pack"
-vscode "vscjava.vscode-java-test"
 vscode "vscjava.vscode-maven"
-vscode "withfig.fig"
 vscode "wix.vscode-import-cost"
-vscode "xabikos.JavaScriptSnippets"
+vscode "xabikos.javascriptsnippets"
 vscode "yzhang.markdown-all-in-one"
