@@ -39,4 +39,34 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   }
 end)
 
+-- workspace
+local act = require "wezterm".action
+
+config.keys = {
+  -- Select workspace
+  {
+    mods = 'CMD|SHIFT',
+    key = 'w',
+    action = act.ShowLauncherArgs { flags = 'WORKSPACES', title = "Select workspace" },
+  },
+  -- Create new workspace
+  {
+    mods = 'CMD|SHIFT',
+    key = 's',
+    action = act.PromptInputLine {
+      description = "(wezterm) Create new workspace:",
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          window:perform_action(
+            act.SwitchToWorkspace {
+              name = line,
+            },
+            pane
+          )
+        end
+      end),
+    },
+  },
+}
+
 return config
