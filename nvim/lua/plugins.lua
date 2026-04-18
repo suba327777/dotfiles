@@ -8,10 +8,7 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
-  use {
-    'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
-  }
+  use { 'tjdevries/colorbuddy.nvim' }
 
   use 'kyazdani42/nvim-web-devicons'        -- File icons
   use 'lambdalisue/fern.vim'                -- filer
@@ -30,6 +27,7 @@ packer.startup(function(use)
 
   -- github copilot
   use 'github/copilot.vim'
+  use { 'CopilotC-Nvim/CopilotChat.nvim', branch = 'main' }
 
   use 'neovim/nvim-lspconfig' -- LSP
   use {
