@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 config.color_scheme = 'Dracula+'
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.4
 config.macos_window_background_blur = 20
 config.window_decorations = 'RESIZE'
 config.macos_forward_to_ime_modifier_mask = 'SHIFT|CTRL'
