@@ -8,8 +8,7 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
-  use { 'tjdevries/colorbuddy.nvim' }
-
+  use 'EdenEast/nightfox.nvim'
   use 'kyazdani42/nvim-web-devicons'        -- File icons
   use 'lambdalisue/fern.vim'                -- filer
   use 'voldikss/vim-floaterm'               --term
