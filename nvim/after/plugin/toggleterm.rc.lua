@@ -14,6 +14,7 @@ toggleterm.setup({
 
 -- toggle command
 vim.keymap.set('t', '<C-t>', [[<C-\><C-n>]])
+vim.keymap.set("n", "tv", "<cmd>ToggleTerm direction=vertical size=50<CR>")
 
 -- fig-terminal
 vim.fn.setenv("FIG_TERM", nil)
