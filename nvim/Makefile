@@ -1,17 +1,16 @@
 .PHONY: init
 init:
-	mkdir -p ${HOME}/.config && \
-		ln -sfnv ${PWD} ${HOME}/.config/nvim
+	mkdir -p ${HOME}/.config
+	ln -sfnv ${PWD} ${HOME}/.config/nvim
+	@echo "Linked nvim config. Next, run 'nvim' to install plugins automatically via lazy.nvim."
 
-.PHONY: install-packer
-install-packer:
-	@if [ ! -d "${HOME}/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then \
-		git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-			${HOME}/.local/share/nvim/site/pack/packer/start/packer.nvim; \
-	else \
-		echo "Packer is already installed."; \
-	fi
-
+.PHONY: clean-all
+clean-all:
+	@echo "Removing nvim config link and all installed plugins/cache..."
+	unlink ${HOME}/.config/nvim || true
+	rm -rf ${HOME}/.local/share/nvim
+	rm -rf ${HOME}/.local/state/nvim
+	rm -rf ${HOME}/.cache/nvim
 
 .PHONY: clean
 clean:
