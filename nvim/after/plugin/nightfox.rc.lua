@@ -4,7 +4,6 @@ require("nightfox").setup({
   options = {
     compile_path = vim.fn.stdpath("cache") .. "/nightfox",
     compile_file_suffix = "_compiled",
-
     transparent = true,
 
     terminal_colors = true,
@@ -84,3 +83,18 @@ require("nightfox").setup({
 })
 
 vim.cmd("colorscheme nightfox")
+
+vim.api.nvim_set_hl(0, "YankHighlight", {
+  bg = "#7aa2f7",
+  fg = "#000000",
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = "YankHighlight",
+      timeout = 180,
+    })
+  end,
+})
