@@ -6,8 +6,6 @@ end
 ts.setup({
   ensure_installed = {
     "lua",
-    "vim",
-    "vimdoc",
     "markdown",
     "markdown_inline",
     "html",
@@ -20,8 +18,9 @@ ts.setup({
     "toml",
     "php",
     "rust",
-    "swift",
     "zig",
+    "go",
+    "python",
   },
 
   sync_install = false,
