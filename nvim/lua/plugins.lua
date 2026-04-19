@@ -29,6 +29,27 @@ require('lazy').setup({
 
   'github/copilot.vim',
   { 'CopilotC-Nvim/CopilotChat.nvim',  branch = 'main' },
+  {
+    'yetone/avante.nvim',
+    event = "VeryLazy",
+    build = "make",
+    opts = {
+      provider = "copilot",
+      auto_suggestions_provider = "copilot",
+    },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "zbirenbaum/copilot.lua",
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = { file_types = { "markdown", "Avante" } },
+        ft = { "markdown", "Avante" },
+      },
+    },
+  },
 
   'neovim/nvim-lspconfig',
   { 'nvim-treesitter/nvim-treesitter', branch = 'main', build = ':TSUpdate' },
@@ -41,8 +62,6 @@ require('lazy').setup({
   'puremourning/vimspector',
   'windwp/nvim-autopairs',
   'windwp/nvim-ts-autotag',
-
-  'nvim-lua/plenary.nvim',
   { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim' } },
   {
     'nvim-telescope/telescope-file-browser.nvim',
