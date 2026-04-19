@@ -1,81 +1,69 @@
-local status, packer = pcall(require, 'packer')
-if (not status) then
-  print("Packer is not installed")
-  return
-end
-
-vim.cmd [[packadd packer.nvim]]
-
-packer.startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'EdenEast/nightfox.nvim'
-  use 'kyazdani42/nvim-web-devicons'        -- File icons
-  use 'lambdalisue/fern.vim'                -- filer
-  use 'voldikss/vim-floaterm'               --term
-  use 'simeji/winresizer'                   -- window resize
-  use 'lukas-reineke/indent-blankline.nvim' -- indent-line
-  use 'glepnir/lspsaga.nvim'                -- LSP UIs
-  use 'L3MON4D3/LuaSnip'                    -- Snippet
-  use 'hoob3rt/lualine.nvim'                -- statusline
-
-  -- hrsh7th
-  use 'hrsh7th/cmp-buffer'   -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp'     --Completion
-  use 'onsails/lspkind-nvim'
-
-  -- github copilot
-  use 'github/copilot.vim'
-  use { 'CopilotC-Nvim/CopilotChat.nvim', branch = 'main' }
-
-  use 'neovim/nvim-lspconfig' -- LSP
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-  use 'folke/neodev.nvim'
-  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for NeoVim's built-in LSP client
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-  use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
-  use 'puremourning/vimspector' -- debug plugin
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
-
-  use 'nvim-lua/plenary.nvim' -- Common utilities
-  use({
-    "nvim-telescope/telescope.nvim",
-    requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
-    config = function()
-      require("telescope").load_extension("lazygit") --lazygit?
-    end,
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable',
+    lazypath,
   })
-  use 'nvim-telescope/telescope-file-browser.nvim'
-  use { "akinsho/toggleterm.nvim", tag = '*', config = function() -- toggle terminal
-    require("toggleterm").setup()
-  end }
+end
+vim.opt.rtp:prepend(lazypath)
 
-  use 'akinsho/nvim-bufferline.lua'
-  use 'norcalli/nvim-colorizer.lua'
+require('lazy').setup({
+  'EdenEast/nightfox.nvim',
+  'kyazdani42/nvim-web-devicons',
+  'lambdalisue/fern.vim',
+  'voldikss/vim-floaterm',
+  'simeji/winresizer',
+  'lukas-reineke/indent-blankline.nvim',
+  'glepnir/lspsaga.nvim',
+  'L3MON4D3/LuaSnip',
+  'hoob3rt/lualine.nvim',
 
-  use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim' --For git blame & browser
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/nvim-cmp',
+  'onsails/lspkind-nvim',
 
-  -- control system
-  use 'ur4ltz/surround.nvim'    -- word sandwich
-  use 'tpope/vim-commentary'    -- gcc comment
-  use 'ggandor/lightspeed.nvim' --move f
-  use {
-    'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
-    config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  }
-  use 'uga-rosa/translate.nvim'
-  use 'suba327777/yank-diag.nvim'
-  -- Lua
-  use '0x00-ketsu/maximizer.nvim'
-end)
+  'github/copilot.vim',
+  { 'CopilotC-Nvim/CopilotChat.nvim',  branch = 'main' },
+
+  'neovim/nvim-lspconfig',
+  { 'nvim-treesitter/nvim-treesitter', branch = 'main', build = ':TSUpdate' },
+  'folke/neodev.nvim',
+  'jose-elias-alvarez/null-ls.nvim',
+  'MunifTanjim/prettier.nvim',
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  { 'scalameta/nvim-metals',         dependencies = { 'nvim-lua/plenary.nvim' } },
+  'puremourning/vimspector',
+  'windwp/nvim-autopairs',
+  'windwp/nvim-ts-autotag',
+
+  'nvim-lua/plenary.nvim',
+  { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim' } },
+  {
+    'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim' }
+  },
+  { 'akinsho/toggleterm.nvim', version = '*' },
+
+  'akinsho/nvim-bufferline.lua',
+  'norcalli/nvim-colorizer.lua',
+
+  'lewis6991/gitsigns.nvim',
+  'dinhhuy258/git.nvim',
+
+  'ur4ltz/surround.nvim',
+  'tpope/vim-commentary',
+  'ggandor/lightspeed.nvim',
+  { 'phaazon/hop.nvim',        branch = 'v2' },
+  'uga-rosa/translate.nvim',
+  'suba327777/yank-diag.nvim',
+  '0x00-ketsu/maximizer.nvim',
+}, {
+  checker = { enabled = false },
+})
