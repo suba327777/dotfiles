@@ -40,3 +40,5 @@ vim.cmd([[let &t_Ce = "\e[[4:0m"]])
 
 -- mapleader
 vim.g.mapleader = " "
+-- Split windows(right)
+vim.opt.splitright = true
