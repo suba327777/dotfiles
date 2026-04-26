@@ -75,6 +75,7 @@ require('lazy').setup({
 
   'lewis6991/gitsigns.nvim',
   'dinhhuy258/git.nvim',
+  { 'sindrets/diffview.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
 
   'ur4ltz/surround.nvim',
   'tpope/vim-commentary',

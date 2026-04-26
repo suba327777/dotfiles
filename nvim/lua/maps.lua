@@ -44,3 +44,8 @@ keymap.set('n', "f", "<Plug>Lightspeed_f")
 
 -- yank diag
 vim.keymap.set('n', 'yd', '<cmd>YankDiag<CR>')
+
+-- diffview
+keymap.set('n', '<leader>dv', '<cmd>DiffviewOpen<CR>', { noremap = true, silent = true })
+keymap.set('n', '<leader>dc', '<cmd>DiffviewClose<CR>', { noremap = true, silent = true })
+keymap.set('n', '<leader>dh', '<cmd>DiffviewFileHistory %<CR>', { noremap = true, silent = true })
