@@ -6,6 +6,7 @@ config.window_background_opacity = 0.4
 config.macos_window_background_blur = 20
 config.window_decorations = 'RESIZE'
 config.macos_forward_to_ime_modifier_mask = 'SHIFT|CTRL'
+config.enable_scroll_bar = true
 
 -- tab
 config.hide_tab_bar_if_only_one_tab = true
@@ -66,6 +67,28 @@ config.keys = {
         end
       end),
     },
+  },
+  {
+    key = 'UpArrow',
+    mods = 'SHIFT',
+    action = act.ScrollByLine(-1),
+  },
+  {
+    key = 'DownArrow',
+    mods = 'SHIFT',
+    action = act.ScrollByLine(1),
+  },
+
+  {
+    mods = 'CMD|OPT',
+    key = 'RightArrow',
+    action = act.ActivateTabRelative(1),
+  },
+
+  {
+    mods = 'CMD|OPT',
+    key = 'LeftArrow',
+    action = act.ActivateTabRelative(-1),
   },
 }
 
