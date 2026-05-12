@@ -16,16 +16,23 @@ vim.lsp.config('ts_ls', {
 vim.lsp.enable('ts_ls')
 
 -- Lua (vim fn, NeoVim API etc..)
-vim.lsp.config('lua_ls', {
+vim.lsp.config("lua_ls", {
   on_attach = on_attach,
   settings = {
     Lua = {
+      runtime = {
+        version = "LuaJIT",
+        path = vim.split(package.path, ";"),
+      },
       diagnostics = {
-        globals = { 'vim' },
+        globals = { "vim" },
       },
       workspace = {
         library = vim.api.nvim_get_runtime_file("", true),
         checkThirdParty = false,
+      },
+      telemetry = {
+        enable = false,
       },
     },
   },
