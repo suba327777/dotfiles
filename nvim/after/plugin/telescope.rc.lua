@@ -9,6 +9,30 @@ end
 
 local fb_actions = require "telescope".extensions.file_browser.actions
 
+local function focus_telescope()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    if vim.bo[buf].filetype == "TelescopePrompt" then
+      vim.api.nvim_set_current_win(win)
+      break
+    end
+  end
+end
+
+local function with_telescope_focus_async(action)
+  return function(prompt_bufnr)
+    local orig_input = vim.ui.input
+    vim.ui.input = function(opts, callback)
+      orig_input(opts, function(value)
+        callback(value)
+        vim.ui.input = orig_input
+        vim.schedule(focus_telescope)
+      end)
+    end
+    action(prompt_bufnr)
+  end
+end
+
 telescope.setup {
   defaults = {
     mappings = {
@@ -29,7 +53,8 @@ telescope.setup {
         },
         ["n"] = {
           -- your custom normal mode mappings
-          ["N"] = fb_actions.create,
+          ["N"] = with_telescope_focus_async(fb_actions.create),
+          ["d"] = with_telescope_focus_async(fb_actions.remove),
           ["h"] = fb_actions.goto_parent_dir,
           ["/"] = function()
             vim.cmd('startinsert')
