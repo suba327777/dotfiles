@@ -53,7 +53,6 @@ require('lazy').setup({
 
   'neovim/nvim-lspconfig',
   { 'nvim-treesitter/nvim-treesitter', branch = 'main', build = ':TSUpdate' },
-  'folke/neodev.nvim',
   'stevearc/conform.nvim',
   'MunifTanjim/prettier.nvim',
   'williamboman/mason.nvim',

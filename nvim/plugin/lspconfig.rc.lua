@@ -1,10 +1,4 @@
-local status, nvim_lsp = pcall(require, 'lspconfig')
-if (not status) then return end
-
-local protocol = require('vim.lsp.protocol')
-
 local on_attach = function(client, buffer)
-  --formatting
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
@@ -14,63 +8,56 @@ local on_attach = function(client, buffer)
 end
 
 -- TypeScript
-nvim_lsp.ts_ls.setup {
+vim.lsp.config('ts_ls', {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
-}
-
-require 'lspconfig'.ts_ls.setup {
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" },
-
-}
--- vim fn , NeoVim API etc..
-require("neodev").setup({
-
 })
+vim.lsp.enable('ts_ls')
 
-nvim_lsp.lua_ls.setup {
+-- Lua (vim fn, NeoVim API etc..)
+vim.lsp.config('lua_ls', {
   on_attach = on_attach,
   settings = {
     Lua = {
       diagnostics = {
-        -- Get the language server to recognize the `vim` global
         globals = { 'vim' },
       },
-
       workspace = {
-        -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false
+        checkThirdParty = false,
       },
     },
   },
-}
+})
+vim.lsp.enable('lua_ls')
 
 -- Rust
-nvim_lsp.rust_analyzer.setup {
+vim.lsp.config('rust_analyzer', {
   on_attach = on_attach,
-}
+})
+vim.lsp.enable('rust_analyzer')
 
 -- Go
-nvim_lsp.gopls.setup {
+vim.lsp.config('gopls', {
   on_attach = on_attach,
   cmd = { "gopls" },
-  filetypes = { "go", "gomod", "go.mod" }
-}
+  filetypes = { "go", "gomod", "go.mod" },
+})
+vim.lsp.enable('gopls')
 
 -- Python
-nvim_lsp.pyright.setup {}
+vim.lsp.config('pyright', {})
+vim.lsp.enable('pyright')
 
--- vue
-nvim_lsp.volar.setup({
-})
+-- Vue
+vim.lsp.config('volar', {})
+vim.lsp.enable('volar')
 
 -- Zig
-nvim_lsp.zls.setup {
+vim.lsp.config('zls', {
   on_attach = on_attach,
   cmd = { "zls" },
   filetypes = { "zig" },
-}
+})
+vim.lsp.enable('zls')
