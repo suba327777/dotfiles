@@ -1,15 +1,14 @@
 SHELL=/bin/zsh
 
 .PHONY: without-brew
-without-brew: iterm2 karabiner nvim tmux zsh
+without-brew: karabiner nvim tmux zsh
 
 .PHONY:all
-all: brew iterm2 karabiner nvim tmux zsh
+all: brew karabiner nvim tmux zsh
 
 .PHONY:clean
 clean:
 	cd brew && make clean && \
-	cd ../iterm2 && make clean && \
 	cd ../karabiner && make clean && \
 	cd ../nvim && make clean && \
 	cd ../tmux && make clean && \
@@ -19,10 +18,6 @@ clean:
 .PHONY: brew
 brew:
 	cd brew && make
-
-.PHONY: iterm2
-itrerm2:
-	cd iterm2 && make
 
 .PHONY: karabiner
 karabiner:
