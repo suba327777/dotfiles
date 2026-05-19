@@ -90,6 +90,18 @@ config.keys = {
     key = 'LeftArrow',
     action = act.ActivateTabRelative(-1),
   },
+
+  -- Split panes
+  {
+    mods = 'CMD|SHIFT',
+    key = '\\',
+    action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
+  },
+  {
+    mods = 'CMD',
+    key = '-',
+    action = act.SplitVertical { domain = 'CurrentPaneDomain' },
+  },
 }
 
 return config
