@@ -17,6 +17,9 @@ return {
         border = 'rounded',
         colors = { normal_bg = '#002b36' },
       },
+      lightbulb = {
+        enable = false,
+      },
     })
 
     local codeaction = require("lspsaga.codeaction")
