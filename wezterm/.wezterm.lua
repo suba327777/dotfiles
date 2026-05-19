@@ -102,6 +102,28 @@ config.keys = {
     key = '-',
     action = act.SplitVertical { domain = 'CurrentPaneDomain' },
   },
+
+  -- Resize panes
+  {
+    mods = 'CMD|SHIFT',
+    key = 'UpArrow',
+    action = act.AdjustPaneSize { 'Up', 3 },
+  },
+  {
+    mods = 'CMD|SHIFT',
+    key = 'DownArrow',
+    action = act.AdjustPaneSize { 'Down', 3 },
+  },
+  {
+    mods = 'CMD|SHIFT',
+    key = 'LeftArrow',
+    action = act.AdjustPaneSize { 'Left', 3 },
+  },
+  {
+    mods = 'CMD|SHIFT',
+    key = 'RightArrow',
+    action = act.AdjustPaneSize { 'Right', 3 },
+  },
 }
 
 return config
