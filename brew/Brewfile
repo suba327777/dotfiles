@@ -5,7 +5,9 @@ tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
+tap "kegworks-app/kegworks"
 tap "kyu08/tap"
+tap "sikarugir-app/sikarugir"
 # Run your GitHub Actions locally
 brew "act"
 # Static checker for GitHub Actions workflow files
@@ -20,12 +22,14 @@ brew "cmake"
 brew "direnv"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Fuzzy finder with preview window for make, pnpm, & yarn
+# Fuzzy finder with preview window for various command runners including make
 brew "fzf-make"
 # GNU compiler collection
 brew "gcc"
 # Remote repository management made easy
 brew "ghq"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
 # Open source programming language to build simple/reliable/efficient software
@@ -46,12 +50,12 @@ brew "mono"
 brew "mysql"
 # Open source relational database management system
 brew "mysql-client"
-# Parser generator tool and incremental parsing library
+# Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
-brew "nginx", restart_service: true
+brew "nginx", restart_service: :changed
 # Node.js version manager
 brew "nodebrew"
 # Development kit for the Java programming language
@@ -74,16 +78,18 @@ brew "swagger-codegen"
 brew "telnet"
 # Terminal multiplexer
 brew "tmux"
+# Parser generator tool
+brew "tree-sitter-cli"
 # JavaScript package manager
 brew "yarn"
 # Programming language designed for robustness, optimality, and clarity
 brew "zig"
-# Launcher for Coursier
-brew "coursier/formulas/coursier"
 # Virtual Audio Driver
 cask "blackhole-16ch"
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
 # Set of tools to manage resources and applications hosted on Google Cloud
-cask "google-cloud-sdk"
+cask "gcloud-cli"
 # Vector graphics editor
 cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -96,6 +102,8 @@ cask "keycastr"
 cask "pgadmin4"
 # Create experiments in behavioral science
 cask "psychopy"
+# Porting tool, to make Windows programs/games into native apps
+cask "sikarugir-app/sikarugir/sikarugir"
 # JDK from the Eclipse Foundation (Adoptium)
 cask "temurin@11"
 # JDK from the Eclipse Foundation (Adoptium)
@@ -116,12 +124,14 @@ vscode "christian-kohler.path-intellisense"
 vscode "cschlosser.doxdocgen"
 vscode "csstools.postcss"
 vscode "dbaeumer.vscode-eslint"
+vscode "docker.docker"
 vscode "dsznajder.es7-react-js-snippets"
 vscode "dzannotti.vscode-babel-coloring"
 vscode "ecmel.vscode-html-css"
 vscode "esbenp.prettier-vscode"
 vscode "formulahendry.auto-rename-tag"
 vscode "formulahendry.code-runner"
+vscode "github.copilot-chat"
 vscode "github.vscode-pull-request-github"
 vscode "gitpod.gitpod-desktop"
 vscode "golang.go"
@@ -132,6 +142,7 @@ vscode "mattpocock.ts-error-translator"
 vscode "mhutchie.git-graph"
 vscode "mitaki28.vscode-clang"
 vscode "mosapride.zenkaku"
+vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-ceintl.vscode-language-pack-ja"
 vscode "ms-dotnettools.csdevkit"
@@ -141,6 +152,7 @@ vscode "ms-dotnettools.vscodeintellicode-csharp"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
 vscode "ms-toolsai.jupyter"
 vscode "ms-toolsai.jupyter-keymap"
 vscode "ms-toolsai.jupyter-renderers"
@@ -148,9 +160,11 @@ vscode "ms-toolsai.vscode-jupyter-cell-tags"
 vscode "ms-toolsai.vscode-jupyter-slideshow"
 vscode "ms-vscode-remote.remote-containers"
 vscode "ms-vscode.cmake-tools"
+vscode "ms-vscode.cpp-devtools"
 vscode "ms-vscode.cpptools"
 vscode "ms-vscode.cpptools-extension-pack"
 vscode "ms-vscode.cpptools-themes"
+vscode "ms-vscode.vscode-typescript-next"
 vscode "oderwat.indent-rainbow"
 vscode "orta.vscode-jest"
 vscode "pkief.material-icon-theme"
@@ -166,6 +180,7 @@ vscode "sainnhe.gruvbox-material"
 vscode "serayuzgur.crates"
 vscode "simonsiefke.svg-preview"
 vscode "smelukov.vscode-csstree"
+vscode "softwaredotcom.swdc-vscode"
 vscode "styled-components.vscode-styled-components"
 vscode "swellaby.rust-pack"
 vscode "tamasfe.even-better-toml"
@@ -174,9 +189,31 @@ vscode "vadimcn.vscode-lldb"
 vscode "vincaslt.highlight-matching-tag"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"
 vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vscjava.vscode-gradle"
 vscode "vscjava.vscode-java-debug"
 vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
 vscode "vscjava.vscode-maven"
+vscode "withfig.fig"
 vscode "wix.vscode-import-cost"
 vscode "xabikos.javascriptsnippets"
 vscode "yzhang.markdown-all-in-one"
+vscode "ziglang.vscode-zig"
+go "github.com/go-delve/delve/cmd/dlv"
+go "golang.org/x/tools/cmd/goimports"
+go "github.com/fatih/gomodifytags"
+go "github.com/haya14busa/goplay/cmd/goplay"
+go "golang.org/x/tools/gopls"
+go "github.com/cweill/gotests/gotests"
+go "github.com/josharian/impl"
+go "honnef.co/go/tools/cmd/staticcheck"
+go "github.com/rhysd/vim-startuptime"
+cargo "cargo-edit"
+cargo "cargo-watch"
+cargo "zellij"
+npm "corepack"
+npm "czg"
+npm "git-cz"
+npm "typescript-language-server"
+npm "typescript"
