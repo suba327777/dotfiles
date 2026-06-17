@@ -1,14 +1,37 @@
-name: Make dotfiles
+name: Verify dotfiles
 
 on:
   push:
     branches:
       - master
+  pull_request:
 
 jobs:
-  make:
+  zsh-syntax-check:
+    name: Zsh syntax check
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Make dotfiles
-        run: make
+      - uses: actions/checkout@v4
+
+      - name: Check zsh files
+        run: |
+          for f in zsh/.zshenv zsh/.zshrc zsh/.zprofile zsh/conf.d/*.zsh; do
+            echo "Checking $f..."
+            zsh -n "$f"
+          done
+
+  lua-syntax-check:
+    name: Lua syntax check
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Lua
+        run: brew install lua
+
+      - name: Check Lua files
+        run: |
+          find nvim -name "*.lua" | while read f; do
+            echo "Checking $f..."
+            luac -p "$f"
+          done
