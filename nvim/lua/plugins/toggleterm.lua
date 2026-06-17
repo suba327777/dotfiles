@@ -2,8 +2,9 @@ return {
   'akinsho/toggleterm.nvim',
   version = '*',
   keys = {
-    { '<C-t>', [[<C-\><C-n>]], mode = 't' },
-    { 'tov', '<cmd>ToggleTerm direction=vertical size=50<CR>' },
+    { '<C-t>', '<cmd>ToggleTerm<CR>',                           mode = { 'n', 'i' } },
+    { '<C-t>', [[<C-\><C-n>]],                                  mode = 't' },
+    { 'tov',   '<cmd>ToggleTerm direction=vertical size=50<CR>' },
   },
   config = function()
     require("toggleterm").setup({
