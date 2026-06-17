@@ -11,30 +11,18 @@ eval "$(anyenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# JAVA VERSION
-#export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
-#export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
-#export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
-
-# Java Versionの切替aliasを設定
-#alias java17="export JAVA_HOME=$JAVA_17_HOME"
-#alias java11="export JAVA_HOME=$JAVA_11_HOME"
-#alias java8="export JAVA_HOME=$JAVA_8_HOME"
-
-#デフォルトでjavaのversonを11にする
-#export JAVA_HOME=`/usr/libexec/java_home -v 11`
-#17
+# Java
 export JAVA_HOME=`/usr/libexec/java_home -v 17`
 PATH=${JAVA_HOME}/bin:${PATH}
 
-# rust path
+# Rust
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# vim en_US
-export LANG=en_US.UTF-8
 
 # Lua
 export PATH=$PATH:$HOME/.config/lsp/lua-language-server/bin
+
+# Locale
+export LANG=en_US.UTF-8
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -50,5 +38,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-
