@@ -1,35 +1,79 @@
 <div align="center">
-<samp>
 
-# My dotfiles
-for OS X
+# ✦ dotfiles ✦
 
-</samp>
+**macOS configuration managed by suba327777**
+
+![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
+![WezTerm](https://img.shields.io/badge/WezTerm-%234E49EE?style=for-the-badge&logo=wezterm&logoColor=white)
+![Neovim](https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white)
+
 </div>
 
-## Usage
+---
+
+## 📦 Requirements
+
+- macOS
+- Git
+
+## 🚀 Setup
+
+```sh
+git clone https://github.com/suba327777/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+make all
+```
+
+> ⚠️ **Warning:** Existing config files will be overwritten with symbolic links.
+
+## 🗂 Structure
 
 ```
-$ git clone https://github.com/suba327777/dotfiles.git
-$ cd dotfiles
-$ make
+dotfiles/
+├── brew/         # Homebrew (Brewfile) + npm global packages
+├── karabiner/    # Karabiner-Elements key mapping
+├── lazygit/      # lazygit config
+├── nvim/         # Neovim (lazy.nvim)
+├── tmux/         # tmux + TPM
+├── wezterm/      # WezTerm
+└── zsh/          # Zsh
 ```
 
-## ⚠️ Warning.
-if you run the make command,your machine will have all its settings overwritten!!
+## 🛠 Make targets
 
-- zsh
-- nvim
-- tmux
-- karabiner
-- iTerm2
-- brew bundle
+| Command | Description |
+|---|---|
+| `make all` | Set up all configurations |
+| `make brew` | Install Homebrew + Brewfile packages |
+| `make zsh` | Create symlink for zsh config |
+| `make nvim` | Create symlink for Neovim config |
+| `make tmux` | Set up tmux config + TPM |
+| `make wezterm` | Create symlink for WezTerm config |
+| `make karabiner` | Create symlink for Karabiner config |
+| `make lazygit` | Create symlink for lazygit config |
+| `make clean` | Remove all symlinks |
 
-## Other
-setting up iTerm2
-1. In iTerm2 > Preferences activeate Load preferences from custom folder... and point to a folder setup
+## ✅ After Setup
 
-![スクリーンショット 2023-05-09 1 22 30](https://user-images.githubusercontent.com/84484832/236877146-1a9dfb49-53d1-42cc-bd4f-03447c0ff45a.png)
+### Neovim
+Plugins are automatically installed by lazy.nvim on the first launch.
 
-2. Clone this repo into that folder (overwrite)
-3. Restart iTerm2
+```sh
+nvim
+```
+
+### tmux
+Install plugins via TPM after the first launch.
+
+```
+<prefix> + I
+```
+
+### Update Brewfile
+
+Dump currently installed packages to Brewfile:
+
+```sh
+cd brew && make bundle
+```
