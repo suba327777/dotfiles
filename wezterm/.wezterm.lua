@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 config.color_scheme = 'Dracula+'
-config.window_background_opacity = 0.4
+config.window_background_opacity = 0.8
 config.macos_window_background_blur = 20
 config.window_decorations = 'RESIZE'
 config.macos_forward_to_ime_modifier_mask = 'SHIFT|CTRL'
@@ -42,6 +42,7 @@ end)
 
 -- workspace
 local act = require "wezterm".action
+
 
 config.keys = {
   -- Select workspace
@@ -92,6 +93,17 @@ config.keys = {
   },
 
   -- Split panes
+  {
+    mods = 'CMD|SHIFT',
+    key = '+',
+    action = wezterm.action_callback(function(window, pane)
+      window:perform_action(act.SplitHorizontal { domain = 'CurrentPaneDomain' }, pane)
+      local right_pane = window:active_pane()
+      window:perform_action(act.SplitVertical { domain = 'CurrentPaneDomain' }, right_pane)
+      window:perform_action(act.ActivatePaneDirection 'Left', window:active_pane())
+      window:perform_action(act.SplitVertical { domain = 'CurrentPaneDomain' }, window:active_pane())
+    end),
+  },
   {
     mods = 'CMD|SHIFT',
     key = '\\',
