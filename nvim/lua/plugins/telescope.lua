@@ -16,9 +16,9 @@ return {
       })
     end },
     { '\\\\', function() require('telescope.builtin').buffers() end },
-    { ';t', function() require('telescope.builtin').help_tags() end },
-    { ';;', function() require('telescope.builtin').resume() end },
-    { ';e', function() require('telescope.builtin').diagnostics() end },
+    { ';t',   function() require('telescope.builtin').help_tags() end },
+    { ';;',   function() require('telescope.builtin').resume() end },
+    { ';e',   function() require('telescope.builtin').diagnostics() end },
     { 'sf', function()
       require('telescope').extensions.file_browser.file_browser({
         path = "%:p:h",

@@ -17,9 +17,16 @@ return {
           severity = { protan = 0, deutan = 0, tritan = 0 },
         },
         styles = {
-          comments = "NONE", conditionals = "NONE", constants = "NONE",
-          functions = "NONE", keywords = "NONE", numbers = "NONE",
-          operators = "NONE", strings = "NONE", types = "NONE", variables = "NONE",
+          comments = "NONE",
+          conditionals = "NONE",
+          constants = "NONE",
+          functions = "NONE",
+          keywords = "NONE",
+          numbers = "NONE",
+          operators = "NONE",
+          strings = "NONE",
+          types = "NONE",
+          variables = "NONE",
         },
         inverse = { match_paren = false, visual = false, search = false },
         modules = {},
@@ -41,8 +48,7 @@ return {
           FloatBorder = { bg = "NONE" },
           -- 分割線
           VertSplit = { bg = "NONE" },
-          WinSeparator = { bg = "NONE" },
-          -- Telescope
+          WinSeparator = { bg = "NONE" }, -- Telescope
           TelescopeNormal = { bg = "NONE" },
           TelescopeBorder = { bg = "NONE" },
           -- popup系
