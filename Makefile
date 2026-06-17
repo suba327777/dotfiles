@@ -4,7 +4,7 @@ SHELL=/bin/zsh
 without-brew: karabiner nvim tmux zsh
 
 .PHONY:all
-all: brew npm karabiner lazygit nvim tmux zsh
+all: brew karabiner lazygit nvim tmux zsh
 
 .PHONY:clean
 clean:
@@ -18,10 +18,6 @@ clean:
 .PHONY: brew
 brew:
 	cd brew && make
-
-.PHONY: npm
-npm:
-	cd npm && make init
 
 .PHONY: lazygit
 lazygit:
