@@ -1,0 +1,9 @@
+[tools]
+node = "lts"
+python = "latest"
+
+#npm packages
+"npm:czg" = "latest"
+"npm:git-cz" = "latest"
+"npm:typescript-language-server" = "latest"
+"npm:typescript" = "latest"

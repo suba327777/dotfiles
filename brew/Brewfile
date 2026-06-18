@@ -12,8 +12,6 @@ tap "sikarugir-app/sikarugir"
 brew "act"
 # Static checker for GitHub Actions workflow files
 brew "actionlint"
-# All in one for **env
-brew "anyenv"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Cross-platform make
@@ -44,6 +42,8 @@ brew "little-cms2"
 brew "lua-language-server"
 # Package manager for the Lua programming language
 brew "luarocks"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Cross platform, open source .NET development framework
 brew "mono"
 # Open source relational database management system
@@ -56,18 +56,10 @@ brew "tree-sitter"
 brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx", restart_service: :changed
-# Node.js version manager
-brew "nodebrew"
 # Development kit for the Java programming language
 brew "openjdk@11"
 # Object-relational database system
 brew "postgresql@14"
-# Python version management
-brew "pyenv"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
-# Ruby version manager
-brew "rbenv"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Experimental Rust compiler front-end for IDEs
@@ -86,6 +78,8 @@ brew "yarn"
 brew "zig"
 # Virtual Audio Driver
 cask "blackhole-16ch"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 # Set of tools to manage resources and applications hosted on Google Cloud
@@ -212,8 +206,3 @@ go "github.com/rhysd/vim-startuptime"
 cargo "cargo-edit"
 cargo "cargo-watch"
 cargo "zellij"
-npm "corepack"
-npm "czg"
-npm "git-cz"
-npm "typescript-language-server"
-npm "typescript"
