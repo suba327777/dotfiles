@@ -42,21 +42,22 @@ dotfiles/
 
 ## 🛠 Make targets
 
-| Command | Description |
-|---|---|
-| `make all` | Set up all configurations |
-| `make brew` | Install Homebrew + Brewfile packages |
-| `make zsh` | Create symlink for zsh config |
-| `make nvim` | Create symlink for Neovim config |
-| `make tmux` | Set up tmux config + TPM |
-| `make wezterm` | Create symlink for WezTerm config |
-| `make karabiner` | Create symlink for Karabiner config |
-| `make lazygit` | Create symlink for lazygit config |
-| `make clean` | Remove all symlinks |
+| Command          | Description                          |
+| ---------------- | ------------------------------------ |
+| `make all`       | Set up all configurations            |
+| `make brew`      | Install Homebrew + Brewfile packages |
+| `make zsh`       | Create symlink for zsh config        |
+| `make nvim`      | Create symlink for Neovim config     |
+| `make tmux`      | Set up tmux config + TPM             |
+| `make wezterm`   | Create symlink for WezTerm config    |
+| `make karabiner` | Create symlink for Karabiner config  |
+| `make lazygit`   | Create symlink for lazygit config    |
+| `make clean`     | Remove all symlinks                  |
 
 ## ✅ After Setup
 
 ### Neovim
+
 Plugins are automatically installed by lazy.nvim on the first launch.
 
 ```sh
@@ -64,11 +65,20 @@ nvim
 ```
 
 ### tmux
+
 Install plugins via TPM after the first launch.
 
 ```
 <prefix> + I
 ```
+
+### Commit Message
+
+```
+npx czg --api-key="ghp_xxxxxx" --api-endpoint="https://models.inference.ai.azure.com" --api-model="gpt-4o-mini"
+```
+
+> OpenAI | cz-git
 
 ### Update Brewfile
 
