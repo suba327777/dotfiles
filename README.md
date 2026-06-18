@@ -31,9 +31,10 @@ make all
 
 ```
 dotfiles/
-├── brew/         # Homebrew (Brewfile) + npm global packages
+├── brew/         # Homebrew (Brewfile)
 ├── karabiner/    # Karabiner-Elements key mapping
 ├── lazygit/      # lazygit config
+├── mise/         # mise config
 ├── nvim/         # Neovim (lazy.nvim)
 ├── tmux/         # tmux + TPM
 ├── wezterm/      # WezTerm
@@ -46,6 +47,7 @@ dotfiles/
 | ---------------- | ------------------------------------ |
 | `make all`       | Set up all configurations            |
 | `make brew`      | Install Homebrew + Brewfile packages |
+| `make mise`      | Create symlink for mise config       |
 | `make zsh`       | Create symlink for zsh config        |
 | `make nvim`      | Create symlink for Neovim config     |
 | `make tmux`      | Set up tmux config + TPM             |
