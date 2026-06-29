@@ -1,3 +1,5 @@
 .DS_Store
 .zcompdump*
 .zsh_history
+nvim.log
+.zsh_sessions
