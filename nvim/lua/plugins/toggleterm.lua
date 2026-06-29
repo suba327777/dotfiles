@@ -2,13 +2,11 @@ return {
   'akinsho/toggleterm.nvim',
   version = '*',
   keys = {
-    { '<C-t>', '<cmd>ToggleTerm<CR>',                           mode = { 'n', 'i' } },
-    { '<C-t>', [[<C-\><C-n>]],                                  mode = 't' },
-    { 'tov',   '<cmd>ToggleTerm direction=vertical size=50<CR>' },
+    { '<C-t>', '<cmd>ToggleTerm<CR>', mode = { 'n', 'i' } },
+    { '<C-t>', [[<C-\><C-n>]],        mode = 't' },
   },
   config = function()
     require("toggleterm").setup({
-      open_mapping = [[<c-t>]],
       close_on_exit = true,
       hide_numbers = true,
       shade_filetypes = {},
